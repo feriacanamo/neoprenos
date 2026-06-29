@@ -91,15 +91,19 @@ Descargar, o sincroniza OneDrive/Drive).
 
 ## 5. Próximos pasos en orden (entregabilidad)
 
-1. **DNS del dominio**: configura **SPF + DKIM + DMARC** (gratis, lo más importante).
-2. **Subdominio** de envío dedicado (p. ej. `cmc.tudominio.com`).
-3. **Amazon SES** → credenciales SMTP → pégalas en AcyMailing (Configuración → SMTP).
-   ⚠️ No uses Mailchimp/Brevo/SendGrid: prohíben cannabis y suspenden la cuenta.
-4. **Warm-up**: empieza con 30–50 envíos/día y sube gradualmente.
-5. **Lista** opt-in, limpia y segmentada (patrocinadores ≠ participantes).
-6. **Test** en mail-tester.com (apunta a 9–10/10) y prueba en Gmail/Outlook/móvil.
+**Vía de envío elegida: AcyMailing Sending Service** (el que ya está pagado).
+Guía detallada paso a paso en **`CONFIGURACION-ACYMAILING.md`**. En corto:
 
-Detalle completo en `ESTRATEGIA-ENTREGABILIDAD.md`.
+1. **Soporte AcyMailing**: confirma por escrito que permiten temática cannabis (Paso 0).
+2. **Activa** el Sending Service en AcyMailing (Configuración → Sending method).
+3. **Publica las entradas DNS** que te muestra AcyMailing: SPF + DKIM (+ Return-Path) + DMARC.
+4. **Verifica** en AcyMailing que está en verde (y comprueba en Gmail → "Mostrar original").
+5. **Warm-up**: empieza con 30–50 envíos/día y sube gradualmente.
+6. **Lista** opt-in, limpia y segmentada (patrocinadores ≠ participantes).
+7. **Test** en mail-tester.com (≥9/10) y prueba en Gmail/Outlook/móvil.
+
+> Plan B si te restringen por temática: **Amazon SES** (mismas plantillas, solo
+> cambia el método de envío). Detalle en `ESTRATEGIA-ENTREGABILIDAD.md`.
 
 ---
 
