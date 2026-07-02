@@ -17,10 +17,17 @@ _Última actualización: 29 de junio de 2026._
 
 🟡 **Pendiente (lo haces tú):**
 - Rellenar los placeholders (URLs, contacto, dirección postal). Ver §4.
-- Subir el logo a una URL pública y ponerla en los emails.
+- Subir el **logo correcto** (`brand/logo-cmc-emblema.png`, ver aviso abajo) a una URL pública y ponerla en los emails.
 - Configurar el envío (autenticación DNS + Amazon SES en AcyMailing). Ver §5.
 - Validar legalmente el texto antes del envío masivo.
 - Cerrar los **niveles de patrocinio** con tarifas reales (ahora son propuesta).
+
+> ⚠️ **Ojo con el logo.** Hay DOS logos distintos en el proyecto: el de
+> **cannarias.net** (una hoja con cintas doradas) y el de la **Masters Cup**
+> (un trofeo formado por una piel de plátano abierta con una hoja dentro).
+> Usa siempre el de la copa: `brand/logo-cmc-emblema.png` (emblema solo, para
+> círculos/avatares) o `brand/logo-cmc-completo.png` (emblema + naming, para
+> cabeceras). El de cannarias.net NO va en material de la Masters Cup.
 
 ---
 
