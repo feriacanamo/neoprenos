@@ -56,11 +56,12 @@ Descargar, o sincroniza OneDrive/Drive).
 | Dato | Valor |
 |---|---|
 | Nombre | Cannarias Masters Cup 2026 (1ª edición) |
+| Web | www.cannariasmasterscup.com |
 | Fecha | 28 de noviembre de 2026 |
-| Sede | Fuerteventura (villa privada) |
-| Formato | Evento privado y premium: catering, charlas, música, networking, premios |
+| Sede | Villa privada en Fuerteventura (sede exacta por confirmar) |
+| Formato | Entrega de premios y fiesta en villa privada: catering, charlas, música, networking |
 | Categorías (propuesta 1ª ed.) | Sativa · Índica · Extracciones (Hash/Rosin) |
-| Cuota participación | 50 € una muestra · 40 €/muestra desde dos |
+| Cuota participación | Desde 45 €/muestra (tramos según nº de muestras; detalle en las bases) |
 | Jurado | 3 jueces especializados por categoría (anónimos + estrella invitada) |
 | Se valora | Aroma, sabor y presencia |
 | Quién participa | Clubes/asociaciones, grow shops, bancos de semillas, empresas del sector y profesionales (mayores de edad) |

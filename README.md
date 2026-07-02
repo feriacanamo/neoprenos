@@ -66,7 +66,7 @@ Asuntos sobrios, cortos y sin palabras-trampa. Elige uno o haz A/B test.
 - **Asunto A:** `Cannarias Masters Cup 2026 — inscripción abierta`
 - **Asunto B:** `Presenta tus muestras: copa canaria, 28 de noviembre`
 - **Asunto C:** `Tu sitio en la 1ª copa canaria (plazas limitadas)`
-- **Preheader:** `Fuerteventura · jurado especializado · desde 40 € por muestra.`
+- **Preheader:** `Fuerteventura · jurado especializado · desde 45 € por muestra.`
 
 ### Email PATROCINADORES
 - **Asunto A:** `Propuesta de patrocinio — Cannarias Masters Cup 2026`
