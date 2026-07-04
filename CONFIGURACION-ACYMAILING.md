@@ -104,6 +104,50 @@ Empieza por quien más te vaya a abrir: las aperturas tempranas construyen reput
 
 ---
 
+## Problema detectado — caracteres extraños (`Captaci�n`, `d�a`, `Art�culo`)
+
+Si en el panel de AcyMailing ves nombres de campaña con `�` en vez de tildes,
+es un **problema de codificación UTF-8** en la base de datos de WordPress, no
+un capricho visual. Ese símbolo es el "carácter de reemplazo" de Unicode:
+significa que la **tilde original se perdió al guardar**, normalmente porque
+las tablas `wp_acymailing_*` en MySQL están en `latin1` (o `utf8` de 3 bytes,
+que tampoco soporta bien emojis de 4 bytes como 🌴🏆) mientras WordPress
+envía el texto en UTF-8.
+
+### ⚠️ Comprobación urgente — ¿llega también a los correos?
+
+Antes de nada, abre un **email de prueba** ya enviado a tu Gmail y mira si el
+**asunto o el cuerpo** también muestran `�` en las tildes o en los emojis.
+
+- **Si solo pasa en el panel de administración** → es cosmético, sin prisa.
+- **Si también pasa en el correo recibido** → es urgente: tus suscriptores
+  verían el email roto (mala imagen y peor señal para los filtros de spam).
+  No lances ninguna campaña real hasta arreglarlo.
+
+### Arreglo inmediato (nombres ya rotos)
+
+Esos campos concretos ya perdieron la tilde sin remedio; hay que reescribirlos
+a mano en AcyMailing: abre cada campaña → corrige el nombre (`Captación`,
+`día`, `Artículo`) → guarda. No afecta a nada ya enviado, son solo etiquetas
+internas del panel.
+
+### Arreglo de raíz (para que no vuelva a pasar)
+
+Requiere acceso a phpMyAdmin/hosting (pídeselo a tu hosting o a un
+desarrollador; hazlo con backup previo, una conversión mal hecha puede
+corromper más texto):
+
+1. **phpMyAdmin** → tu base de datos de WordPress → revisa la *collation* de
+   las tablas `wp_acymailing_*`. Si aparece `latin1_swedish_ci`, ahí está el fallo.
+2. **`wp-config.php`** → debe tener `define('DB_CHARSET', 'utf8mb4');`, y las
+   tablas deben coincidir en `utf8mb4_unicode_ci` (no solo `utf8`).
+3. Pide que **conviertan las tablas afectadas** a `utf8mb4` con backup previo.
+   No uses a ciegas el checkbox "Convert table" de phpMyAdmin sin supervisión:
+   si el contenido ya son bytes UTF-8 mal interpretados como latin1, una
+   conversión automática puede corromper aún más el texto en vez de arreglarlo.
+
+---
+
 ## Paso 6 — Antes de cada campaña (checklist)
 
 - [ ] Soporte de AcyMailing confirmó que la temática está permitida (Paso 0)
@@ -117,6 +161,7 @@ Empieza por quien más te vaya a abrir: las aperturas tempranas construyen reput
 - [ ] Asunto sobrio y corto, **sin** "marihuana/THC/gratis/promoción", sin MAYÚSCULAS ni !!!
 - [ ] Enlace de baja `{unsubscribe}` funcional + dirección postal en el pie
 - [ ] Prueba en **mail-tester.com** (≥9/10) y en Gmail/Outlook/móvil
+- [ ] Sin `�` en asunto/cuerpo del email de prueba (tildes y emojis correctos)
 
 ---
 
